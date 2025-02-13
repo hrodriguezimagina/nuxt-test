@@ -25,16 +25,19 @@ export default defineNuxtConfig({
     ///'/': { prerender: true },
     
     
-    '/products': { swr: 20 },
+    '/products': { swr: true },
     // Generated at build time for SEO purpose
     '/coffee': { prerender: true},
 
 
-    '/posts': { swr: true },
+    '/posts': { isr: 60 },
+    /*
     '/post/**': { swr: 3600 }, // Cache for 1 hour
+    */
     
     // Cached in seconds 
-    '/api/*': { cache: { maxAge: 60 * 60 } } // Cache for 1 hour
+    //global for routes
+    //'/api/*': { cache: { maxAge: 60 * 60 } } // Cache for 1 hour
 
   },
 

@@ -11,18 +11,16 @@ await postsStore.getPosts()
 <template>
 	<div>		
 		<NuxtLink to="/coffee" >
-			BACK to coffee page
+			BACK to coffee page: 
 		</NuxtLink>		
-		<h1 class="m-8">Products list</h1>		
-		<div class="grid grid-cols-4 gap-4">
-				<template v-for="(item, index) in postsStore.posts">			
+		<h1 class="m-8">Products list: {{ postsStore.posts.data.length }}</h1>		
+		<div class="m-8">
+				<template v-for="(item, index) in postsStore.posts.data">			
 					<div>
 						<NuxtLink :to="{ name: 'posts-id', params: { id: item.id } }">
-							<img class="w-[250px] rounded-b-md" :src="item.image">
+							
 							<h5 class="mb-2 text-xl font-medium leading-tight">{{ item.title }}</h5>
-							<p class="mb-4 text-base">
-								{{ item.description }}
-							</p>
+							
   					</NuxtLink>
 					</div>							
 				</template>
