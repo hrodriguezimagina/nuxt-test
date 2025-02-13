@@ -10,8 +10,11 @@ await postsStore.getPosts()
 
 <template>
 	<div>		
-		<h1>Products list</h1>
-			<div class="grid grid-cols-4 gap-4">
+		<NuxtLink to="/coffee" >
+			BACK to coffee page
+		</NuxtLink>		
+		<h1 class="m-8">Products list</h1>		
+		<div class="grid grid-cols-4 gap-4">
 				<template v-for="(item, index) in postsStore.posts">			
 					<div>
 						<NuxtLink :to="{ name: 'posts-id', params: { id: item.id } }">

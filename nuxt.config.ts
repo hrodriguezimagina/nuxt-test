@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   routeRules: {
     
     
-    '/': { prerender: true },
+    ///'/': { prerender: true },
     
     
     '/products': { swr: 20 },

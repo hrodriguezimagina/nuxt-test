@@ -5,6 +5,9 @@
 
 <template>
 	<div>		
+		<NuxtLink to="/posts">
+			BACK to posts list 
+		</NuxtLink>
 		<h1>Coffee list</h1>
 		<div class="grid grid-cols-4 gap-4">
 			<template v-for="(item, index) in data">			
