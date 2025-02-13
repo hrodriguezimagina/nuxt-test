@@ -9,7 +9,7 @@ export default defineEventHandler(async () => {
     return products
   }
     console.log('fetch')
-    products = await $fetch('https://fakestoreapi.com/products')    
+    products = await $fetch('https://fakestoreapi.com/products')
     return products
   })
 

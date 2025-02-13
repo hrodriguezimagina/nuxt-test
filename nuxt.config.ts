@@ -13,13 +13,22 @@ export default defineNuxtConfig({
 
   /* routes */
   routeRules: {
-    //'/**': { isr: false },
+    
+    
+    '/': { prerender: true },
+    
+    
     '/products': { swr: 20 },
     // Generated at build time for SEO purpose
     '/coffee': { prerender: true},
+
+
+    '/posts': { swr: true },
+    '/post/**': { swr: 3600 }, // Cache for 1 hour
     
     // Cached in seconds 
-    '/api/*': { cache: { maxAge: 10 } },
+    '/api/*': { cache: { maxAge: 60 * 60 } } // Cache for 1 hour
+
   },
 
 /*
