@@ -1,22 +1,23 @@
-<script setup lang="ts">
+<script setup lang="ts">	
+	const postsStore = useMyPostsStore();
 	const route = useRoute()
-	
-	const {status, data: posts} = await useLazyFetch('/api/posts')
-	let post = 'empty'
-	if(posts.value && posts.value.length){
-		console.log('here')
-		post = posts.value.find(item => item.id == route.params.id)	
-	}
-	
+	const post = await postsStore.getPost(route.params.id)	
 </script>
 
 <template>
 	<div>
+		<NuxtLink to="/posts">
+			BACK to list 
+		</NuxtLink>
+		<div>						
+			<img class="w-[250px] rounded-b-md" :src="post.image">
+			<h5 class="mb-2 text-xl font-medium leading-tight">{{ post.title }}</h5>
+			<p class="mb-4 text-base">
+				{{ post.description }}
+			</p>  					
+		</div>			
 		<pre>
 			{{ post }}		
-		</pre>
-		<NuxtLink to="/posts">
-			back to list 
-		</NuxtLink>
+		</pre>		
 	</div>
 </template>

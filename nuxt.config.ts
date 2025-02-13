@@ -10,6 +10,13 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+  modules: [
+    // ...
+    '@pinia/nuxt',
+  ],
+  pinia: {
+    storesDirs: ['./stores/**'],
+  },
 
   /* routes */
   routeRules: {
