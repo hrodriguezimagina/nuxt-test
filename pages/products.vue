@@ -4,7 +4,7 @@
 
 <template>
 	<div>
-		<p>hello</p>
+		<p>hell2o</p>
 		<products-component
 			
 		/>
