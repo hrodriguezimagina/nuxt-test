@@ -53,7 +53,7 @@
 
 	const data = ref([])
 	const newData = ref([])
-	const take = ref(1)
+	const take = ref(10)
 
 	
 	function increment(){
@@ -70,7 +70,7 @@
 		const params = {
 					api: getUrl('/posts'),
 					page: 1,
-					//take: take.value				
+					take: take.value				
 			}
 		await $fetch('/api/posts',  { params: params }
 		).then(response => {
@@ -91,7 +91,7 @@
 	})
 	onMounted(async () => {		
 		console.log('mounted')
-		//getPosts()
+		getPosts()
 	})
 	  
   </script>

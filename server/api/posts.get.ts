@@ -14,5 +14,5 @@ export default defineCachedEventHandler(async (event) => {
     return data;
   }, {
       maxAge: 1,  //minimun time, 
-      staleMaxAge: 4 // sent to the client while the cache updates in the background.
+      staleMaxAge: 1 // sent to the client while the cache updates in the background.
   });
