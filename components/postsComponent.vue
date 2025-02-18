@@ -38,19 +38,18 @@
   <script setup> 
 
 	/*
-		base config
-	*/	
-	const api = 'https://ibuilder.ozonohosting.com/api'
+	  base config
+	*/
+			
 	const moduleName = 'iblog';
 	const moduleVersion = 'v1';
 	const urlBase = `/${moduleName}/${moduleVersion}`
-
 	
-
-	function getUrl(entity){
-		return `${api}${urlBase}${entity}`
+	const apiRoutes = {
+		posts: `${urlBase}/posts`
 	}
 
+	
 	const data = ref([])
 	const newData = ref([])
 	const take = ref(10)
@@ -66,14 +65,13 @@
 		getPosts()
 	}
 
-	async function getPosts(){
-		const params = {
-					api: getUrl('/posts'),
-					page: 1,
-					take: take.value				
-			}
-		await $fetch('/api/base',  { params: params }
-		).then(response => {
+	async function getPosts(){		
+		const params = {			
+			page: 1,
+			take: take.value				
+		}
+		
+		baseService.index(apiRoutes.posts, params).then(response => {
 			data.value = response?.data || []
 		})
 
