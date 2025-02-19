@@ -78,7 +78,7 @@
 	}
 
 	async function getNewPosts(){
-		await $fetch('https://ibuilder.ozonohosting.com/api/iblog/v1/posts').then(response => {
+		await baseService.get('https://ibuilder.ozonohosting.com/api/iblog/v1/posts').then(response => {
 			newData.value = response.data
 		})
 	}

@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     ///'/': { prerender: true },
     
     
-    ///'/products': { swr: true },
+    //'/products': { swr: true },
     // Generated at build time for SEO purpose
     '/coffee': { prerender: true},
 
