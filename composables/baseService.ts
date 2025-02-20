@@ -1,6 +1,3 @@
-const urlBase = 'https://ibuilder.ozonohosting.com/api'
-
-
 const baseService = {
 	
 	/**
@@ -16,7 +13,7 @@ const baseService = {
 			$fetch('/api/base', { 
 				method: 'GET',
 				params: {
-					api:  `${urlBase}${configName}`, 
+					api:  `${config.apiUrl}${configName}`, 
 					...params
 				}
 			}).then(response => resolve(response)).catch(error => {
@@ -41,7 +38,7 @@ const baseService = {
 				method: 'GET',
 				params
 			}).then(response => resolve(response)).catch(error => {
-					reject(error)
+				reject(error)
 			})
 		})
 
