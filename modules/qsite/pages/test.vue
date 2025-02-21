@@ -1,13 +1,11 @@
 <template>
     <div>
-        <pre>
-            {{ router }}
-        </pre>
+        <PostsComponent />
         
     </div>
         
     
 </template>
 <script setup lang="ts">
-const router = useRouter()
+const router = ref(useRouter())
 </script>

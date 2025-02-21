@@ -5,8 +5,8 @@
 
 <template>
 	<div>		
-		<NuxtLink to="/posts">
-			BACK to posts list 
+		<NuxtLink to="/products">
+			BACK to products list 
 		</NuxtLink>
 		<h1>Coffee list</h1>
 		<div class="grid grid-cols-4 gap-4">

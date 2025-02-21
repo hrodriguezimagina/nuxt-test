@@ -28,9 +28,6 @@ export default defineNuxtConfig({
     //'/products': { swr: true },
     // Generated at build time for SEO purpose
     '/coffee': { prerender: true},
-
-
-    '/posts': { isr: 60 },
     /*
     '/post/**': { swr: 3600 }, // Cache for 1 hour
     */
