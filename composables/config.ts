@@ -1,6 +1,7 @@
 
 const config = {
-  apiUrl: 'https://ibuilder.ozonohosting.com/api'
+  apiUrl: 'https://www.imaginacolombia.com/api', 
+  cacheMaxAge: 1 //in seconds
 }
 
 
